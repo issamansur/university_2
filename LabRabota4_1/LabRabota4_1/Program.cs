@@ -17,34 +17,25 @@ namespace LabRabota4_1
 {
     class Program
     {
-        static double TimeFunc(int[] array, int number=5)
+        delegate bool Func(int[] array);
+
+        static double TimeFunc(Func func, int[] array, int number=5)
         {
             // секундомер
             Stopwatch sw = new Stopwatch();
             // время работы
             double time = 0;
-            
+
+            func(array);
+
             for (int i = 1; i <= number; i++)
             {
-                // результат повторения персонала в БД
-                bool check = false;
                 sw.Reset();
                 //засекаем время начала работы алгоритма
                 sw.Start();
 
-                if (array.Length > 1)
-                    for (int first = 0; first < array.Length - 1; first++)
-                    {
-                        for (int second = first + 1; second < array.Length; second++)
-                            if (array[first] == array[second])
-                            {
-                                check = true;
-                                break;
-                            }
+                func(array);
 
-                        if (check)
-                                break;
-                    }
                 // останавливаем время 
                 sw.Stop();
                 // суммируем время работы алгоритма
@@ -56,7 +47,27 @@ namespace LabRabota4_1
             return time;
         }
 
-        
+        static bool Check(int[] array)
+        {
+            // результат повторения персонала в БД
+            bool check = false;
+
+            if (array.Length > 1)
+                for (int first = 0; first < array.Length - 1; first++)
+                {
+                    for (int second = first + 1; second < array.Length; second++)
+                        if (array[first] == array[second])
+                        {
+                            check = true;
+                            break;
+                        }
+
+                    if (check)
+                        break;
+                }
+            return check;
+        }
+
         static void Main(string[] args)
         {
             Random rand = new Random();
@@ -75,7 +86,7 @@ namespace LabRabota4_1
                 for (int i = 0; i < mas.Length; i++)
                     mas[i] = rand.Next(0, 5 * k);
 
-                timeWork = TimeFunc(mas);
+                timeWork = TimeFunc(Check, mas);
                 Console.WriteLine("Время работы алгоритма в среднем случае {0}", timeWork);
 
                 // лучший случай
@@ -83,14 +94,14 @@ namespace LabRabota4_1
                     mas[i] = i;
                 mas[1] = 0;
 
-                timeWork = TimeFunc(mas);
+                timeWork = TimeFunc(Check, mas);
                 Console.WriteLine("Время работы алгоритма в лучшем случае {0}", timeWork);
 
                 // худший случай
                 for (int i = 0; i < mas.Length; i++)
                     mas[i] = i;
 
-                timeWork = TimeFunc(mas);
+                timeWork = TimeFunc(Check, mas);
                 Console.WriteLine("Время работы алгоритма в худшем случае {0}", timeWork);
             }
             Console.ReadLine();
