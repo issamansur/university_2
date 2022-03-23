@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LabRabota5_2", "LabRabota5_2\LabRabota5_2.csproj", "{5FE8CB45-310E-4A3B-9E82-97AC5017BBD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLabRabota5_2", "TestLabRabota5_2\TestLabRabota5_2.csproj", "{8B1973D0-7D5E-462D-BB91-2A4DC6CD4670}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FE8CB45-310E-4A3B-9E82-97AC5017BBD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FE8CB45-310E-4A3B-9E82-97AC5017BBD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FE8CB45-310E-4A3B-9E82-97AC5017BBD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FE8CB45-310E-4A3B-9E82-97AC5017BBD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B1973D0-7D5E-462D-BB91-2A4DC6CD4670}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B1973D0-7D5E-462D-BB91-2A4DC6CD4670}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B1973D0-7D5E-462D-BB91-2A4DC6CD4670}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B1973D0-7D5E-462D-BB91-2A4DC6CD4670}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {73111C95-64B2-47E4-8013-6C8125A59515}
+	EndGlobalSection
+EndGlobal
