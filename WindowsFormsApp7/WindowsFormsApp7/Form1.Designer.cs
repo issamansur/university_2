@@ -29,187 +29,134 @@ namespace WindowsFormsApp7
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBoxDegrees = new System.Windows.Forms.GroupBox();
-            this.radioButtonDegree5 = new System.Windows.Forms.RadioButton();
-            this.radioButtonDegree4 = new System.Windows.Forms.RadioButton();
-            this.radioButtonDegree3 = new System.Windows.Forms.RadioButton();
-            this.radioButtonDegree2 = new System.Windows.Forms.RadioButton();
-            this.radioButtonDegree1 = new System.Windows.Forms.RadioButton();
-            this.groupBoxInputData = new System.Windows.Forms.GroupBox();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.answerTextBox = new System.Windows.Forms.RichTextBox();
+            this.groupBoxAnswers = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox0 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxInputData = new System.Windows.Forms.GroupBox();
             this.buttonCheck = new System.Windows.Forms.Button();
+            this.buttonSolveAnalytic = new System.Windows.Forms.Button();
             this.buttonSolve = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
-            this.groupBoxDegrees.SuspendLayout();
+            this.comboBoxDegree = new System.Windows.Forms.ComboBox();
+            this.label0 = new System.Windows.Forms.Label();
+            this.groupBoxControl = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.groupBoxAnswers.SuspendLayout();
             this.groupBoxInputData.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxControl.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBoxDegrees
+            // chart1
             // 
-            this.groupBoxDegrees.Controls.Add(this.radioButtonDegree5);
-            this.groupBoxDegrees.Controls.Add(this.radioButtonDegree4);
-            this.groupBoxDegrees.Controls.Add(this.radioButtonDegree3);
-            this.groupBoxDegrees.Controls.Add(this.radioButtonDegree2);
-            this.groupBoxDegrees.Controls.Add(this.radioButtonDegree1);
-            this.groupBoxDegrees.Location = new System.Drawing.Point(12, 12);
-            this.groupBoxDegrees.Name = "groupBoxDegrees";
-            this.groupBoxDegrees.Size = new System.Drawing.Size(441, 51);
-            this.groupBoxDegrees.TabIndex = 0;
-            this.groupBoxDegrees.TabStop = false;
-            this.groupBoxDegrees.Text = "Степень уравнения";
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Location = new System.Drawing.Point(292, 19);
+            this.chart1.Name = "chart1";
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(405, 243);
+            this.chart1.TabIndex = 6;
+            this.chart1.Text = "chart1";
             // 
-            // radioButtonDegree5
+            // answerTextBox
             // 
-            this.radioButtonDegree5.AutoSize = true;
-            this.radioButtonDegree5.Checked = true;
-            this.radioButtonDegree5.Location = new System.Drawing.Point(376, 19);
-            this.radioButtonDegree5.Name = "radioButtonDegree5";
-            this.radioButtonDegree5.Size = new System.Drawing.Size(56, 17);
-            this.radioButtonDegree5.TabIndex = 4;
-            this.radioButtonDegree5.TabStop = true;
-            this.radioButtonDegree5.Text = "Пятая";
-            this.radioButtonDegree5.UseVisualStyleBackColor = true;
-            this.radioButtonDegree5.CheckedChanged += new System.EventHandler(this.radioButtonDegrees_CheckedChanged);
+            this.answerTextBox.Location = new System.Drawing.Point(6, 19);
+            this.answerTextBox.Name = "answerTextBox";
+            this.answerTextBox.Size = new System.Drawing.Size(280, 243);
+            this.answerTextBox.TabIndex = 5;
+            this.answerTextBox.Text = "";
             // 
-            // radioButtonDegree4
+            // groupBoxAnswers
             // 
-            this.radioButtonDegree4.AutoSize = true;
-            this.radioButtonDegree4.Location = new System.Drawing.Point(285, 19);
-            this.radioButtonDegree4.Name = "radioButtonDegree4";
-            this.radioButtonDegree4.Size = new System.Drawing.Size(79, 17);
-            this.radioButtonDegree4.TabIndex = 3;
-            this.radioButtonDegree4.TabStop = true;
-            this.radioButtonDegree4.Text = "Четвёртая";
-            this.radioButtonDegree4.UseVisualStyleBackColor = true;
-            this.radioButtonDegree4.CheckedChanged += new System.EventHandler(this.radioButtonDegrees_CheckedChanged);
-            // 
-            // radioButtonDegree3
-            // 
-            this.radioButtonDegree3.AutoSize = true;
-            this.radioButtonDegree3.Location = new System.Drawing.Point(194, 19);
-            this.radioButtonDegree3.Name = "radioButtonDegree3";
-            this.radioButtonDegree3.Size = new System.Drawing.Size(61, 17);
-            this.radioButtonDegree3.TabIndex = 2;
-            this.radioButtonDegree3.TabStop = true;
-            this.radioButtonDegree3.Text = "Третья";
-            this.radioButtonDegree3.UseVisualStyleBackColor = true;
-            this.radioButtonDegree3.CheckedChanged += new System.EventHandler(this.radioButtonDegrees_CheckedChanged);
-            // 
-            // radioButtonDegree2
-            // 
-            this.radioButtonDegree2.AutoSize = true;
-            this.radioButtonDegree2.Location = new System.Drawing.Point(103, 19);
-            this.radioButtonDegree2.Name = "radioButtonDegree2";
-            this.radioButtonDegree2.Size = new System.Drawing.Size(61, 17);
-            this.radioButtonDegree2.TabIndex = 1;
-            this.radioButtonDegree2.TabStop = true;
-            this.radioButtonDegree2.Text = "Вторая";
-            this.radioButtonDegree2.UseVisualStyleBackColor = true;
-            this.radioButtonDegree2.CheckedChanged += new System.EventHandler(this.radioButtonDegrees_CheckedChanged);
-            // 
-            // radioButtonDegree1
-            // 
-            this.radioButtonDegree1.AutoSize = true;
-            this.radioButtonDegree1.Location = new System.Drawing.Point(12, 19);
-            this.radioButtonDegree1.Name = "radioButtonDegree1";
-            this.radioButtonDegree1.Size = new System.Drawing.Size(63, 17);
-            this.radioButtonDegree1.TabIndex = 0;
-            this.radioButtonDegree1.TabStop = true;
-            this.radioButtonDegree1.Text = "Первая";
-            this.radioButtonDegree1.UseVisualStyleBackColor = true;
-            this.radioButtonDegree1.CheckedChanged += new System.EventHandler(this.radioButtonDegrees_CheckedChanged);
-            // 
-            // groupBoxInputData
-            // 
-            this.groupBoxInputData.Controls.Add(this.label6);
-            this.groupBoxInputData.Controls.Add(this.textBox6);
-            this.groupBoxInputData.Controls.Add(this.textBox5);
-            this.groupBoxInputData.Controls.Add(this.textBox4);
-            this.groupBoxInputData.Controls.Add(this.textBox3);
-            this.groupBoxInputData.Controls.Add(this.textBox2);
-            this.groupBoxInputData.Controls.Add(this.textBox1);
-            this.groupBoxInputData.Controls.Add(this.label5);
-            this.groupBoxInputData.Controls.Add(this.label4);
-            this.groupBoxInputData.Controls.Add(this.label3);
-            this.groupBoxInputData.Controls.Add(this.label2);
-            this.groupBoxInputData.Controls.Add(this.label1);
-            this.groupBoxInputData.Location = new System.Drawing.Point(12, 69);
-            this.groupBoxInputData.Name = "groupBoxInputData";
-            this.groupBoxInputData.Size = new System.Drawing.Size(710, 56);
-            this.groupBoxInputData.TabIndex = 0;
-            this.groupBoxInputData.TabStop = false;
-            this.groupBoxInputData.Text = "Ввод данных";
+            this.groupBoxAnswers.Controls.Add(this.chart1);
+            this.groupBoxAnswers.Controls.Add(this.answerTextBox);
+            this.groupBoxAnswers.Location = new System.Drawing.Point(12, 170);
+            this.groupBoxAnswers.Name = "groupBoxAnswers";
+            this.groupBoxAnswers.Size = new System.Drawing.Size(710, 268);
+            this.groupBoxAnswers.TabIndex = 3;
+            this.groupBoxAnswers.TabStop = false;
+            this.groupBoxAnswers.Text = "Результаты вычислений";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(610, 20);
+            this.label6.Location = new System.Drawing.Point(614, 21);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(15, 16);
+            this.label6.Size = new System.Drawing.Size(28, 16);
             this.label6.TabIndex = 21;
             this.label6.Text = "=  0";
             // 
-            // textBox6
+            // textBox0
             // 
-            this.textBox6.Location = new System.Drawing.Point(538, 19);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(66, 20);
-            this.textBox6.TabIndex = 19;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(436, 19);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(66, 20);
-            this.textBox5.TabIndex = 18;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(330, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(66, 20);
-            this.textBox4.TabIndex = 17;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(224, 19);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(66, 20);
-            this.textBox3.TabIndex = 16;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(118, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(66, 20);
-            this.textBox2.TabIndex = 15;
+            this.textBox0.Location = new System.Drawing.Point(542, 20);
+            this.textBox0.Name = "textBox0";
+            this.textBox0.Size = new System.Drawing.Size(66, 20);
+            this.textBox0.TabIndex = 19;
+            this.textBox0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 19);
+            this.textBox1.Location = new System.Drawing.Point(439, 20);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(66, 20);
-            this.textBox1.TabIndex = 14;
+            this.textBox1.TabIndex = 18;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(333, 20);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(66, 20);
+            this.textBox2.TabIndex = 17;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(227, 20);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(66, 20);
+            this.textBox3.TabIndex = 16;
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(121, 20);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(66, 20);
+            this.textBox4.TabIndex = 15;
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(15, 20);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(66, 20);
+            this.textBox5.TabIndex = 14;
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(508, 20);
+            this.label5.Location = new System.Drawing.Point(511, 21);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(24, 16);
             this.label5.TabIndex = 13;
@@ -219,7 +166,7 @@ namespace WindowsFormsApp7
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(402, 20);
+            this.label4.Location = new System.Drawing.Point(405, 21);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(28, 16);
             this.label4.TabIndex = 12;
@@ -229,7 +176,7 @@ namespace WindowsFormsApp7
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(296, 20);
+            this.label3.Location = new System.Drawing.Point(299, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 16);
             this.label3.TabIndex = 11;
@@ -239,7 +186,7 @@ namespace WindowsFormsApp7
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(190, 20);
+            this.label2.Location = new System.Drawing.Point(193, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 16);
             this.label2.TabIndex = 0;
@@ -249,81 +196,134 @@ namespace WindowsFormsApp7
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(84, 20);
+            this.label1.Location = new System.Drawing.Point(87, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "x⁵ +";
             // 
-            // groupBox1
+            // groupBoxInputData
             // 
-            this.groupBox1.Controls.Add(this.buttonCheck);
-            this.groupBox1.Controls.Add(this.buttonSolve);
-            this.groupBox1.Controls.Add(this.buttonReset);
-            this.groupBox1.Location = new System.Drawing.Point(459, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(263, 51);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Управление";
+            this.groupBoxInputData.Controls.Add(this.label6);
+            this.groupBoxInputData.Controls.Add(this.textBox0);
+            this.groupBoxInputData.Controls.Add(this.textBox1);
+            this.groupBoxInputData.Controls.Add(this.textBox2);
+            this.groupBoxInputData.Controls.Add(this.textBox3);
+            this.groupBoxInputData.Controls.Add(this.textBox4);
+            this.groupBoxInputData.Controls.Add(this.textBox5);
+            this.groupBoxInputData.Controls.Add(this.label5);
+            this.groupBoxInputData.Controls.Add(this.label4);
+            this.groupBoxInputData.Controls.Add(this.label3);
+            this.groupBoxInputData.Controls.Add(this.label2);
+            this.groupBoxInputData.Controls.Add(this.label1);
+            this.groupBoxInputData.Location = new System.Drawing.Point(12, 108);
+            this.groupBoxInputData.Name = "groupBoxInputData";
+            this.groupBoxInputData.Size = new System.Drawing.Size(652, 56);
+            this.groupBoxInputData.TabIndex = 0;
+            this.groupBoxInputData.TabStop = false;
+            this.groupBoxInputData.Text = "Ввод данных";
             // 
             // buttonCheck
             // 
-            this.buttonCheck.Location = new System.Drawing.Point(166, 19);
+            this.buttonCheck.Enabled = false;
+            this.buttonCheck.Location = new System.Drawing.Point(451, 19);
             this.buttonCheck.Name = "buttonCheck";
-            this.buttonCheck.Size = new System.Drawing.Size(84, 23);
+            this.buttonCheck.Size = new System.Drawing.Size(72, 23);
             this.buttonCheck.TabIndex = 4;
             this.buttonCheck.Text = "Проверить";
             this.buttonCheck.UseVisualStyleBackColor = true;
             this.buttonCheck.Click += new System.EventHandler(this.buttonCheck_Click);
             // 
+            // buttonSolveAnalytic
+            // 
+            this.buttonSolveAnalytic.Location = new System.Drawing.Point(267, 19);
+            this.buttonSolveAnalytic.Name = "buttonSolveAnalytic";
+            this.buttonSolveAnalytic.Size = new System.Drawing.Size(178, 23);
+            this.buttonSolveAnalytic.TabIndex = 3;
+            this.buttonSolveAnalytic.Text = "Решить аналитически";
+            this.buttonSolveAnalytic.UseVisualStyleBackColor = true;
+            this.buttonSolveAnalytic.Click += new System.EventHandler(this.buttonSolveAnalytic_Click);
+            // 
             // buttonSolve
             // 
-            this.buttonSolve.Location = new System.Drawing.Point(92, 19);
+            this.buttonSolve.Location = new System.Drawing.Point(267, 48);
             this.buttonSolve.Name = "buttonSolve";
-            this.buttonSolve.Size = new System.Drawing.Size(68, 23);
-            this.buttonSolve.TabIndex = 3;
-            this.buttonSolve.Text = "Решить";
+            this.buttonSolve.Size = new System.Drawing.Size(178, 23);
+            this.buttonSolve.TabIndex = 9;
+            this.buttonSolve.Text = "Решить численно";
             this.buttonSolve.UseVisualStyleBackColor = true;
-            this.buttonSolve.Click += new System.EventHandler(this.buttonSolve_Click);
             // 
             // buttonReset
             // 
-            this.buttonReset.Location = new System.Drawing.Point(10, 19);
+            this.buttonReset.Location = new System.Drawing.Point(9, 48);
             this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(76, 23);
+            this.buttonReset.Size = new System.Drawing.Size(209, 23);
             this.buttonReset.TabIndex = 2;
             this.buttonReset.Text = "Сбросить";
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
+            // 
+            // comboBoxDegree
+            // 
+            this.comboBoxDegree.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDegree.FormattingEnabled = true;
+            this.comboBoxDegree.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.comboBoxDegree.Location = new System.Drawing.Point(172, 21);
+            this.comboBoxDegree.Name = "comboBoxDegree";
+            this.comboBoxDegree.Size = new System.Drawing.Size(46, 21);
+            this.comboBoxDegree.TabIndex = 7;
+            this.comboBoxDegree.SelectedIndexChanged += new System.EventHandler(this.comboBoxDegree_SelectedIndexChanged);
+            // 
+            // label0
+            // 
+            this.label0.AutoSize = true;
+            this.label0.Location = new System.Drawing.Point(6, 24);
+            this.label0.Name = "label0";
+            this.label0.Size = new System.Drawing.Size(160, 13);
+            this.label0.TabIndex = 8;
+            this.label0.Text = "Выберите степень уравнения:";
+            // 
+            // groupBoxControl
+            // 
+            this.groupBoxControl.Controls.Add(this.buttonSolve);
+            this.groupBoxControl.Controls.Add(this.label0);
+            this.groupBoxControl.Controls.Add(this.comboBoxDegree);
+            this.groupBoxControl.Controls.Add(this.buttonCheck);
+            this.groupBoxControl.Controls.Add(this.buttonSolveAnalytic);
+            this.groupBoxControl.Controls.Add(this.buttonReset);
+            this.groupBoxControl.Location = new System.Drawing.Point(18, 12);
+            this.groupBoxControl.Name = "groupBoxControl";
+            this.groupBoxControl.Size = new System.Drawing.Size(646, 90);
+            this.groupBoxControl.TabIndex = 1;
+            this.groupBoxControl.TabStop = false;
+            this.groupBoxControl.Text = "Панель управления";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 450);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxAnswers);
+            this.Controls.Add(this.groupBoxControl);
             this.Controls.Add(this.groupBoxInputData);
-            this.Controls.Add(this.groupBoxDegrees);
             this.Name = "Form1";
-            this.Text = "Form1";
-            this.groupBoxDegrees.ResumeLayout(false);
-            this.groupBoxDegrees.PerformLayout();
+            this.Text = "Уравлятор 3.1";
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.groupBoxAnswers.ResumeLayout(false);
             this.groupBoxInputData.ResumeLayout(false);
             this.groupBoxInputData.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.groupBoxControl.ResumeLayout(false);
+            this.groupBoxControl.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBoxDegrees;
-        private System.Windows.Forms.RadioButton radioButtonDegree5;
-        private System.Windows.Forms.RadioButton radioButtonDegree4;
-        private System.Windows.Forms.RadioButton radioButtonDegree3;
-        private System.Windows.Forms.RadioButton radioButtonDegree2;
-        private System.Windows.Forms.RadioButton radioButtonDegree1;
         private System.Windows.Forms.GroupBox groupBoxInputData;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -331,16 +331,22 @@ namespace WindowsFormsApp7
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox0;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.GroupBox groupBoxControl;
         private System.Windows.Forms.Button buttonCheck;
-        private System.Windows.Forms.Button buttonSolve;
+        private System.Windows.Forms.Button buttonSolveAnalytic;
         private System.Windows.Forms.Button buttonReset;
+        private System.Windows.Forms.GroupBox groupBoxAnswers;
+        private System.Windows.Forms.RichTextBox answerTextBox;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.ComboBox comboBoxDegree;
+        private System.Windows.Forms.Label label0;
+        private System.Windows.Forms.Button buttonSolve;
     }
 }
 
