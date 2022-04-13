@@ -49,6 +49,10 @@ namespace WindowsFormsApp7
             this.groupBoxInputData = new System.Windows.Forms.GroupBox();
             this.buttonCheck = new System.Windows.Forms.Button();
             this.buttonSolveAnalytic = new System.Windows.Forms.Button();
+            this.textBoxFrom = new System.Windows.Forms.TextBox();
+            this.textBoxTo = new System.Windows.Forms.TextBox();
+            this.labelFrom = new System.Windows.Forms.Label();
+            this.labelTo = new System.Windows.Forms.Label();
             this.buttonSolve = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
             this.comboBoxDegree = new System.Windows.Forms.ComboBox();
@@ -71,7 +75,7 @@ namespace WindowsFormsApp7
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(405, 243);
+            this.chart1.Size = new System.Drawing.Size(350, 243);
             this.chart1.TabIndex = 6;
             this.chart1.Text = "chart1";
             // 
@@ -89,7 +93,7 @@ namespace WindowsFormsApp7
             this.groupBoxAnswers.Controls.Add(this.answerTextBox);
             this.groupBoxAnswers.Location = new System.Drawing.Point(12, 170);
             this.groupBoxAnswers.Name = "groupBoxAnswers";
-            this.groupBoxAnswers.Size = new System.Drawing.Size(710, 268);
+            this.groupBoxAnswers.Size = new System.Drawing.Size(649, 268);
             this.groupBoxAnswers.TabIndex = 3;
             this.groupBoxAnswers.TabStop = false;
             this.groupBoxAnswers.Text = "Результаты вычислений";
@@ -218,7 +222,7 @@ namespace WindowsFormsApp7
             this.groupBoxInputData.Controls.Add(this.label1);
             this.groupBoxInputData.Location = new System.Drawing.Point(12, 108);
             this.groupBoxInputData.Name = "groupBoxInputData";
-            this.groupBoxInputData.Size = new System.Drawing.Size(652, 56);
+            this.groupBoxInputData.Size = new System.Drawing.Size(649, 56);
             this.groupBoxInputData.TabIndex = 0;
             this.groupBoxInputData.TabStop = false;
             this.groupBoxInputData.Text = "Ввод данных";
@@ -226,9 +230,9 @@ namespace WindowsFormsApp7
             // buttonCheck
             // 
             this.buttonCheck.Enabled = false;
-            this.buttonCheck.Location = new System.Drawing.Point(451, 19);
+            this.buttonCheck.Location = new System.Drawing.Point(433, 21);
             this.buttonCheck.Name = "buttonCheck";
-            this.buttonCheck.Size = new System.Drawing.Size(72, 23);
+            this.buttonCheck.Size = new System.Drawing.Size(203, 23);
             this.buttonCheck.TabIndex = 4;
             this.buttonCheck.Text = "Проверить";
             this.buttonCheck.UseVisualStyleBackColor = true;
@@ -238,20 +242,53 @@ namespace WindowsFormsApp7
             // 
             this.buttonSolveAnalytic.Location = new System.Drawing.Point(267, 19);
             this.buttonSolveAnalytic.Name = "buttonSolveAnalytic";
-            this.buttonSolveAnalytic.Size = new System.Drawing.Size(178, 23);
+            this.buttonSolveAnalytic.Size = new System.Drawing.Size(160, 23);
             this.buttonSolveAnalytic.TabIndex = 3;
             this.buttonSolveAnalytic.Text = "Решить аналитически";
             this.buttonSolveAnalytic.UseVisualStyleBackColor = true;
             this.buttonSolveAnalytic.Click += new System.EventHandler(this.buttonSolveAnalytic_Click);
             // 
+            // textBoxFrom
+            // 
+            this.textBoxFrom.Location = new System.Drawing.Point(457, 50);
+            this.textBoxFrom.Name = "textBoxFrom";
+            this.textBoxFrom.Size = new System.Drawing.Size(70, 20);
+            this.textBoxFrom.TabIndex = 12;
+            // 
+            // textBoxTo
+            // 
+            this.textBoxTo.Location = new System.Drawing.Point(566, 50);
+            this.textBoxTo.Name = "textBoxTo";
+            this.textBoxTo.Size = new System.Drawing.Size(70, 20);
+            this.textBoxTo.TabIndex = 13;
+            // 
+            // labelFrom
+            // 
+            this.labelFrom.AutoSize = true;
+            this.labelFrom.Location = new System.Drawing.Point(433, 53);
+            this.labelFrom.Name = "labelFrom";
+            this.labelFrom.Size = new System.Drawing.Size(18, 13);
+            this.labelFrom.TabIndex = 10;
+            this.labelFrom.Text = "от";
+            // 
+            // labelTo
+            // 
+            this.labelTo.AutoSize = true;
+            this.labelTo.Location = new System.Drawing.Point(541, 53);
+            this.labelTo.Name = "labelTo";
+            this.labelTo.Size = new System.Drawing.Size(19, 13);
+            this.labelTo.TabIndex = 11;
+            this.labelTo.Text = "до";
+            // 
             // buttonSolve
             // 
             this.buttonSolve.Location = new System.Drawing.Point(267, 48);
             this.buttonSolve.Name = "buttonSolve";
-            this.buttonSolve.Size = new System.Drawing.Size(178, 23);
+            this.buttonSolve.Size = new System.Drawing.Size(160, 23);
             this.buttonSolve.TabIndex = 9;
             this.buttonSolve.Text = "Решить численно";
             this.buttonSolve.UseVisualStyleBackColor = true;
+            this.buttonSolve.Click += new System.EventHandler(this.buttonSolve_Click);
             // 
             // buttonReset
             // 
@@ -290,6 +327,10 @@ namespace WindowsFormsApp7
             // 
             // groupBoxControl
             // 
+            this.groupBoxControl.Controls.Add(this.textBoxTo);
+            this.groupBoxControl.Controls.Add(this.textBoxFrom);
+            this.groupBoxControl.Controls.Add(this.labelTo);
+            this.groupBoxControl.Controls.Add(this.labelFrom);
             this.groupBoxControl.Controls.Add(this.buttonSolve);
             this.groupBoxControl.Controls.Add(this.label0);
             this.groupBoxControl.Controls.Add(this.comboBoxDegree);
@@ -298,7 +339,7 @@ namespace WindowsFormsApp7
             this.groupBoxControl.Controls.Add(this.buttonReset);
             this.groupBoxControl.Location = new System.Drawing.Point(18, 12);
             this.groupBoxControl.Name = "groupBoxControl";
-            this.groupBoxControl.Size = new System.Drawing.Size(646, 90);
+            this.groupBoxControl.Size = new System.Drawing.Size(643, 90);
             this.groupBoxControl.TabIndex = 1;
             this.groupBoxControl.TabStop = false;
             this.groupBoxControl.Text = "Панель управления";
@@ -307,7 +348,7 @@ namespace WindowsFormsApp7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 450);
+            this.ClientSize = new System.Drawing.Size(673, 450);
             this.Controls.Add(this.groupBoxAnswers);
             this.Controls.Add(this.groupBoxControl);
             this.Controls.Add(this.groupBoxInputData);
@@ -347,6 +388,10 @@ namespace WindowsFormsApp7
         private System.Windows.Forms.ComboBox comboBoxDegree;
         private System.Windows.Forms.Label label0;
         private System.Windows.Forms.Button buttonSolve;
+        private System.Windows.Forms.Label labelTo;
+        private System.Windows.Forms.Label labelFrom;
+        private System.Windows.Forms.TextBox textBoxTo;
+        private System.Windows.Forms.TextBox textBoxFrom;
     }
 }
 

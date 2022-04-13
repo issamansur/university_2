@@ -31,11 +31,21 @@ namespace WindowsFormsApp7
                 box.Enabled = false;
                 box.Text = "";
             }
+            textBoxFrom.Text = textBoxTo.Text = "";
 
             buttonSolve.Enabled = false;
             buttonSolveAnalytic.Enabled = false;
             buttonSolve.Enabled = false;
         }
+
+        private void ClearSolution()
+        {
+            answerTextBox.Text = "";
+            chart1.Series[0].Points.Clear();
+
+            coefficients = new List<double>() { };
+        }
+        
 
         private void comboBoxDegree_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -56,29 +66,59 @@ namespace WindowsFormsApp7
             comboBoxDegree.SelectedIndex = -1;
             BlockButton();
 
-            answerTextBox.Text = "";
-            chart1.Series[0].Points.Clear();
+            ClearSolution();
+        }
+
+        private bool CheckAndSafe()
+        {
+            for (int i = 0; i <= Degree; i++)
+            {
+                if (Double.TryParse(textBoxes[i].Text, out double coef))
+                    coefficients.Add(coef);
+                else
+                    return false;
+            }
+
+            return true;
+        }
+
+        private void buttonSolve_Click(object sender, EventArgs e)
+        {
+            ClearSolution();
+
+            CheckAndSafe();
+            CreateGraph(coefficients);
+
+            if (Double.TryParse(textBoxFrom.Text, out double numberFrom) && 
+                Double.TryParse(textBoxFrom.Text, out double numberTo) && numberFrom <= numberTo)
+            {
+                for (double x = numberFrom; x <= numberTo; x += 0.1)
+                    if (Math.Abs(Equation(x)) < 0.001)
+                        answerTextBox.Text += x.ToString() + "\n";
+            }
+            else
+                MessageBox.Show("Одно или несколько полей ввода заданы неверно!");
+        }
+
+        public double Equation(double x)
+        {
+            List<double> coefs = new List<double>(coefficients);
+            coefs.Reverse();
+            int i = 0;
+            double y = 0;
+            foreach (double coef in coefs)
+            {
+                y += coef * Math.Pow(x, i);
+                i++;
+            }
+            return y;
         }
 
         private void buttonSolveAnalytic_Click(object sender, EventArgs e)
-        {
-            bool Check = true;
-            
-            answerTextBox.Text = "";
-            chart1.Series[0].Points.Clear();
-            /*
-            for (int i = highDegree - Degree; i <= highDegree; i++)
-            {
-                if (Double.TryParse(textBoxes[i].Text, out double number))
-                    coefficients.Add(double.Parse(textBoxes[i].Text));
-                else
-                {
-                    Check = false;
-                    break;
-                }
-            }
-            */
-            if (Check)
+        {/*
+
+
+            if (CheckAndSafe())
             {
                 List<double> answers = Solve(coefficients);
                 if (answers.Count != 0)
@@ -92,22 +132,10 @@ namespace WindowsFormsApp7
                 }                    
                 else
                     answerTextBox.Text += "Решения не найдены!";
-                
-                coefficients.Reverse();
-                for (double x = -99; x <= 100; x++)
-                {
-                    double y = 0, i = 0;
-                    foreach (double coef in coefficients)
-                    {
-                        y += coef * Math.Pow(x, i);
-                        i++;
-                    }
-                    chart1.Series[0].Points.AddXY(x, y);
-                }
             }
 
             else
-                MessageBox.Show("Одно или несколько полей ввода заданы неверно!");
+                MessageBox.Show("Одно или несколько полей ввода заданы неверно!");*/
         }
 
         private void buttonCheck_Click(object sender, EventArgs e)
@@ -132,33 +160,6 @@ namespace WindowsFormsApp7
         }
 
         // methods for solving equations
-
-        private List<double> Solve(List<double> coef)
-        {
-            List<double> answers = new List<double> { };
-
-            switch (coef.Count)
-            {
-                case 2:
-                    answers = First(coef[0], coef[1]);
-                    break;
-                case 3:
-                    answers = Second(coef[0], coef[1], coef[2]);
-                    break;
-                    /*                case 4:
-                    answers = Third(coef[0], coef[1], coef[2], coef[3]);
-                    break;
-
-                case 5:
-                    answers = Fourth(coef[0], coef[1], coef[2], coef[3], coef[4]);
-                    break;
-                case 6:
-                    answers = Fifth(coef[0], coef[1], coef[2], coef[3], coef[4], coef[5]);
-                    break;
-                    */
-            }
-            return answers;
-        }
 
         private List<double> First(double a, double b)
         {
@@ -252,5 +253,21 @@ private List<double> ThirdSearch(double d, double a, double b, double c)
    }
 }
 */
+
+        public void CreateGraph(List<double> coefficients)
+        {
+            List<double> coefs = new List<double>(coefficients);
+            coefs.Reverse();
+            for (double x = -99; x <= 100; x++)
+            {
+                double y = 0, i = 0;
+                foreach (double coef in coefs)
+                {
+                    y += coef * Math.Pow(x, i);
+                    i++;
+                }
+                chart1.Series[0].Points.AddXY(x, y);
+            }
+        }
     }
 }
