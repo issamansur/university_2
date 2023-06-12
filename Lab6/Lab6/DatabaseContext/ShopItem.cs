@@ -5,6 +5,11 @@ namespace Lab6.DatabaseContext;
 
 public partial class ShopItem
 {
+    public ShopItem()
+    {
+
+    }
+
     public ShopItem(int shopID, int itemID)
     {
         ShopId = shopID;

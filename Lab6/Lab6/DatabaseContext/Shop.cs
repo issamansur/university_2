@@ -6,6 +6,10 @@ namespace Lab6.DatabaseContext;
 
 public partial class Shop: IValidatableObject
 {
+    public Shop()
+    {
+
+    }
     public Shop(string name, string? email, string? address)
     {
         ShopName = name; 

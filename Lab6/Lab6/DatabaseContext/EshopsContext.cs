@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Lab6.DatabaseContext;
 
-public partial class EshopsContext : DbContext, IItemRep, IShopRep
+public partial class EshopsContext : DbContext, /*IItemRep,*/ IShopRep
 {
     public EshopsContext()
     {
@@ -26,6 +26,8 @@ public partial class EshopsContext : DbContext, IItemRep, IShopRep
     public virtual DbSet<Shop> Shops { get; set; }
 
     public virtual DbSet<ShopItem> ShopItems { get; set; }
+
+    public virtual DbSet<Review> Reviews { get; set; }
 
     //-
 
@@ -69,7 +71,7 @@ public partial class EshopsContext : DbContext, IItemRep, IShopRep
         }
         return false;
     }
-
+    /*
     public void AddItem(string title, int amount, decimal price) => Items.Add(new Item(title, amount, price));
     public void AddItem(Item item) => Items.Add(item);
     public bool DeleteItem(int id)
@@ -102,6 +104,7 @@ public partial class EshopsContext : DbContext, IItemRep, IShopRep
         }
         return false;
     }
+    */
     //-
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -19,8 +19,12 @@ namespace Lab6
             */
             using (EshopsContext context = new EshopsContext())
             {
-                context.AddItem("bow", 1, 100);
-                context.AddShop("OAO", null, null);
+                /*
+                context.AddItem("bowwww", 1, 100);
+                */
+                context.AddShop("OAOAO", null, null);
+
+                context.SaveChanges();
             }
 
         }
